@@ -1,4 +1,4 @@
-This is a curve fitting exercise for ECOR1042 AB F24
+This is a curve fitting exercise for ECOR1042 AB F24. Download the file 'Voltage Output Data' to use in your code.
 
 The data contained is the voltage gain of a low pass RC filter measured at different frqeuencies. Using python, create a user interface that:
 - Runs continuously while the user wants to keep using it
