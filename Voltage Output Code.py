@@ -36,12 +36,7 @@ def scatter_data(data) -> None:
         x.append(point['Frequency(dec)'])
         y.append(point['Gain(dB)'])
 
-    fig = plt.figure()
-    plt.title('Bode plot for a low pass RC filter')
-    plt.xlabel('Frequency(dec)')
-    plt.ylabel('Gain(dB)')
-    plt.scatter(x, y)
-    plt.show()
+    return x, y
     
 
 def poly(x, c) -> float:
@@ -75,8 +70,15 @@ def curve_fit(data, points: tuple, degree) -> list[int]:
     for x_ei in x_e:
         y_e.append(poly(x_ei, c))
 
-    scatter_data(data)
+    xscatter, yscatter = scatter_data(data)
+    
+    fig = plt.figure()
+    plt.title('Bode plot for a low pass RC filter')
+    plt.xlabel('Frequency(dec)')
+    plt.ylabel('Gain(dB)')
+    plt.scatter(xscatter, yscatter)
     plt.plot(x_e, y_e, 'r-')
+    plt.show()
 
     return c
     
